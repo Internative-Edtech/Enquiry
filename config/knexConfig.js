@@ -16,11 +16,13 @@ const defaultDbConfig = {
 module.exports = {
   ...defaultDbConfig,
   connection: {
-    host: process.env.DB_HOST || "localhost",
+    host:
+      // process.env.DB_HOST ||
+      "internative-enquiry.c8oxwlvsi6u1.ap-south-1.rds.amazonaws.com",
     user: process.env.DB_USER || "postgres",
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
+    password: process.env.DB_PASSWORD || "giri172006",
+    database: process.env.DB_NAME || "enquiry",
+    port: process.env.DB_PORT || 5432,
     connectionTimeoutMillis: Math.trunc(process.env.DB_CONNECTION_TIMEOUT),
     statementTimeout: Math.trunc(process.env.DB_STATEMENT_TIMEOUT)
   },
